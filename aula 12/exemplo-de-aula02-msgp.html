@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagem Personalizada</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-dark text-light">
+
+    <main class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6">
+                
+                <div class="card bg-secondary bg-opacity-10 border-light border-opacity-25 shadow-lg rounded-4 p-4 text-light">
+                    
+                    <!-- Títulos e subtítulo idênticos ao do professor -->
+                    <h1 class="h3 fw-bold mb-1">Mensagem personalizada</h1>
+                    <p class="text-light opacity-75 mb-4">Digite seu nome para receber uma saudação.</p>
+                    
+                    <form id="formSaudacao">
+                        <div class="mb-3">
+                            <label for="campoNome" class="form-label">Seu nome:</label>
+                            <!-- Placeholder idêntico -->
+                            <input type="text" id="campoNome" class="form-control" placeholder="Digite seu nome">
+                        </div>
+                        <!-- Botão com o texto exato -->
+                        <button type="submit" class="btn btn-primary rounded-pill px-4">Mostrar mensagem</button>
+                    </form>
+
+                    <!-- Área onde a mensagem aparece -->
+                    <p id="areaMensagem" class="mt-4 fw-bold fs-5 mb-0"></p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const formulario = document.getElementById("formSaudacao");
+        const campoNome = document.getElementById("campoNome");
+        const areaMensagem = document.getElementById("areaMensagem");
+
+        formulario.addEventListener("submit", function(evento) {
+            evento.preventDefault(); 
+
+            const nomeDigitado = campoNome.value.trim();
+
+            areaMensagem.classList.remove("text-danger", "text-success");
+
+            if (nomeDigitado === "") {
+                areaMensagem.textContent = "Por favor, digite seu nome!";
+                areaMensagem.classList.add("text-danger");
+            } else {
+                areaMensagem.textContent = `Olá, ${nomeDigitado}!`;
+                areaMensagem.classList.add("text-success");
+            }
+        });
+    </script>
+
+</body>
+</html>

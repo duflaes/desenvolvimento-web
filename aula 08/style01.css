@@ -1,0 +1,123 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin:0;
+    background-color: rgba(207, 151, 214, 0.89);
+    color: rgba(119, 48, 212, 0.685);
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* organizaçao geral da pagina */
+.layout-pagina {
+    display:grid;
+    grid-template-areas:
+     "hearder hearder";
+    grid-template-areas:
+      "sidebar main";
+    grid-template-areas: 
+      "footer footer";
+      ;
+
+      grid-template-columns: 220px 1fr;
+      grid-template-rows: auto 1fr auto;
+
+      min-height: 100vh;
+}
+
+/* cabeçalho */
+.cabeçalho { 
+    grid-area: "hearder";
+    background-color: blueviolet;
+    color: black;
+    text-align: center;
+}
+.cabeçalho h1 {
+    margin: 0 0 10px;
+}
+
+.cabeçalho p {
+
+}
+
+/* menu lateral */
+
+.barra-lateral {
+    grid-area: sidebar;
+
+    background-color: rgb(197, 234, 243);
+    padding: 20px;
+}
+
+.barra-lateral h2 {
+    color: rgb(122, 122, 187);
+}
+
+.barra-lateral h2 {
+    margin 0;
+    padding: 0;
+    list-style: none;
+}
+
+.barra-lateral li{
+    margin-bottom: 10px;
+}
+.barra-lateral a{
+    display: block;
+    background-color: cadetblue;
+    color: rgb(188, 220, 235);
+    padding: 12px;
+    text-decoration: none;
+}
+
+.barra-lateral a:hover {
+    background-color: rgb(135, 161, 216);
+}
+
+/* conteudo principal */
+
+.conteudo-principal h2{
+    grid-area: main;
+    padding: 30px;
+}
+
+.conteudo-principal h2{
+    margin-top: 0px;
+    color: cornflowerblue;
+}
+
+grid-principal {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    gap: 2rem;
+}
+
+/* cards */
+
+.card {
+    background-color: rgb(205, 241, 255);
+    padding: 20px;
+    border: 1px solid pink;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgb(152, 219, 216);
+
+}
+
+.card h3{
+    margin-top: 0;
+    color: rgb(127, 196, 218);
+}
+
+.card a{
+    display: inline-block;
+    background-color: plum;
+    color: beige;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.card a:hover{
+    background-color: rgb(220, 133, 223);
+}
